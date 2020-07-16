@@ -1,2 +1,2 @@
-web:gunicorn CovidApp2.wsgi -- log-file -
+web:gunicorn CovidApp2.wsgi
 heroku ps:scale web=1
