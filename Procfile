@@ -1,1 +1,1 @@
-web: node app.py
+web: run app.py
