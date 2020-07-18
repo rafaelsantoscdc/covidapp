@@ -12,7 +12,7 @@ warnings.filterwarnings("ignore")
 # import model
 with open('covid_model.pkl', 'rb') as file:
 
-    covid_model = pickle.load(file)
+    covid_model = pickle.load(open(file))
 
 
 app = flask.Flask(__name__, template_folder="templates")
