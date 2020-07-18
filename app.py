@@ -10,7 +10,7 @@ from datetime import datetime
 warnings.filterwarnings("ignore")
 
 # import model
-with open('model/covid_model.pkl', 'rb') as file:
+with open('covid_model.pkl', 'rb') as file:
 
     covid_model = pickle.load(file)
 
