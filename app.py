@@ -10,7 +10,7 @@ from datetime import datetime
 warnings.filterwarnings("ignore")
 
 # import model
-with open('covid_model.pkl', 'rb') as file:
+with open('model/covid_model.pkl', 'rb') as file:
 
     covid_model = pickle.load(file)
 
@@ -71,5 +71,5 @@ def main():
         return flask.render_template("index.html", result_covid=result)
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host='127.0.0.1', port=port)
+    #app.run(host='127.0.0.1',debug=True)
+    app.run()

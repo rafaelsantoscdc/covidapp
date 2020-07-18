@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <!-- CSS-->
     <style>
@@ -30,7 +31,7 @@
 
 </head>
 <body>
-  <!-- Navigation -->
+  <!-- Navigation 
   <nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
     <div class="container">
       <a class="navbar-brand" href="#">Hackathon 1 - ChatBot</a>
@@ -40,47 +41,78 @@
       
     </div>
   </nav>
-  
+  -->
   <!-- Full Page Image Header with Vertically Centered Content -->
   <header class="masthead">
     <div class="container h-100">
       <div class="row h-100 align-items-center">
         <div class="col-12 text-center">
-          <h1 class="font-weight-light">Mussum Ipsum, cacilds vidis litro abertis.</h1>
-          <p class="lead">Mussum Ipsum, cacilds vidis litro abertis.</p>
-
-
-
+        <!-- 
+          <h3 class="font-weight-light">Hackathon 1 - Formulário para Teste Covid-19</h3>
+          <br />
+        -->
           <form action="{{ url_for('main') }}" method="POST" enctype="multipart/form-data">
+
               <div class="form-row">
-                  <div class="form-group col-md-6">
-                      <label>Sexo</label>
-                      <input type="text" class="form-control" id="sexo" name="sexo" placeholder="Informe o Sexo com (F/M)">
+                  <div class="form-group col-md-12">
+                    <label>Informe o Seu Gênero:</label>
+                    <select name="sexo" id="sexo">
+                      <option value="">Selecione</option>
+                      <option value="M">Masculino</option>
+                      <option value="F">Feminino</option>
+                    </select>
+                    </div>
+                  
+                  <div class="form-group col-md-12">
+                      <label>Informe a Sua Idade: </label>
+                      <input type="text" id="idade" name="idade">
                   </div>
-                  <div class="form-group col-md-6">
-                      <label>Idade</label>
-                      <input type="text" class="form-control" id="idade" name="idade" placeholder="Informe sua idade">
+
+                   <div class="form-group col-md-12">
+                      <label>Informe se Teve Febre:</label>
+                      <select name="febre" id="febre">
+                        <option value="">Selecione</option>
+                        <option value="S">Sim</option>
+                        <option value="N">Não</option>
+                      </select>
                   </div>
-                  <div class="form-group col-md-6">
-                      <label>Febre</label>
-                      <input type="text" class="form-control" id="febre" name="febre" placeholder="Informe se está com Febre (S/N)">
+
+                 <div class="form-group col-md-12">
+                      <label>Informe se Teve Tosse:</label>
+                      <select name="tosse" id="tosse">
+                        <option value="">Selecione</option>
+                        <option value="S">Sim</option>
+                        <option value="N">Não</option>
+                      </select>
                   </div>
-                  <div class="form-group col-md-6">
-                      <label>Tosse</label>
-                      <input type="text" class="form-control" id="tosse" name="tosse" placeholder="Informe se está com Tosse (S/N)">
+
+                  <div class="form-group col-md-12">
+                    <label>Informe se Teve Falta de Ar:</label>
+                    <select name="falta_ar" id="falta_ar">
+                      <option value="">Selecione</option>
+                      <option value="S">Sim</option>
+                      <option value="N">Não</option>
+                    </select>
                   </div>
-                  <div class="form-group col-md-6">
-                    <label>Falta de Ar</label>
-                    <input type="text" class="form-control" id="falta_ar" name="falta_ar" placeholder="Informe se está com Falta de Ar (S/N)">
-                </div>
-                <div class="form-group col-md-6">
-                    <label>Dor de Garganta</label>
-                    <input type="text" class="form-control" id="dor_garganta" name="dor_garganta" placeholder="Informe se está com Dor de Garganta (S/N)">
-                </div>
-                <div class="form-group col-md-6">
-                    <label>Outros</label>
-                    <input type="text" class="form-control" id="outros" name="outros" placeholder="Informe se está com Outros Sintomas (S/N)">
-                </div>
+
+                  <div class="form-group col-md-12">
+                    <label>Informe se Teve Dor de Garganta:</label>
+                    <select name="dor_garganta" id="dor_garganta">
+                      <option value="">Selecione</option>
+                      <option value="S">Sim</option>
+                      <option value="N">Não</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group col-md-12">
+                    <label>Informe se Teve Outros Sintomas</label>
+                    <select name="outros" id="outros">
+                      <option value="">Selecione</option>
+                      <option value="S">Sim</option>
+                      <option value="N">Não</option>
+                    </select>
+                  </div>
+
               </div>
             <button type="submit" class="btn btn-primary" onclick="showInput();">Enviar Resultado</button>
           </form>
@@ -88,25 +120,7 @@
         
           {% if result_covid %}
             <hr> 
-            <h2>Seu Resultado : {{''.format(result_covid) }}</h2>
-         
-            <!-- <table border=4>
-            <h4>Valores Informados</h2>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                  <b>Área :</b> {{ disp_area }}
-                </div>
-                <div class="form-group col-md-6">
-                  <b>Condominio :</b> {{ disp_condo }}
-                </div>
-                <div class="form-group col-md-6">
-                  <b>Quartos :</b> {{ disp_rooms }}
-                </div>
-                <div class="form-group col-md-6">
-                  <b>Suites :</b> {{ disp_suites }}
-                </div>
-            </div>
-          </table> -->
+            <h5>Seu Resultado : {{result_covid}}</h5>
           {% endif %}
 
           
